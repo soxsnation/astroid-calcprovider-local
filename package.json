@@ -1,0 +1,54 @@
+{
+    "name": "astroid-calcprovider-local",
+	"description": "Software development kit for the astroid framework.",
+	"version": "0.1.0",
+	"license": "MIT",
+	"author": "Sal Gerace <sgerace@gmail.com>",
+	"keywords": [ 
+		"astroid",
+		"sdk"
+	],
+	"homepage": "https://github.com/dotdecimal/astroid-sdk",
+	"repository": "git://github.com/dotdecimal/astroid-sdk.git",
+	"preferGlobal": true,
+	"engines": {
+		"node": ">= 0.8.0"
+	},
+	"bin": {
+		"astroid": "./lib/cli.js"
+	},
+	"dependencies": {
+		"async": "0.2.10",
+		"bluebird": "1.2.1",
+		"colors": "0.6.2",
+		"deep-equal": "0.2.1",
+		"express": "3.4.8",
+		"fstream": "0.1.25",
+		"fstream-ignore": "0.0.7",
+		"http-proxy": "1.0.3",
+		"json-stable-stringify": "0.1.2",
+		"jsonet": "1.0.0",
+		"mkdirp": "0.5.0",
+		"moment": "2.5.1",
+		"node-uuid": "1.4.1",
+        "nomnom": "1.6.2",
+		"progress": "1.1.5",
+		"read": "1.0.5",
+		"request": "2.34.0",
+		"rimraf": "2.2.6",
+		"sqlite3": "2.2.0",
+		"tar": "0.1.19"
+	},
+	"devDependencies": {
+		"chai": "1.9.1",
+		"coveralls": "2.3.0",
+		"istanbul": "0.2.7",
+		"mocha": "1.18.2",
+        "sinon": "1.9.1"
+	},
+	"scripts": {
+		"test": "mocha --recursive --reporter spec",
+		"cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive --reporter spec",
+		"ci": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive --reporter spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+	}
+}
