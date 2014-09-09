@@ -1,0 +1,638 @@
+{
+	"calc": {
+		"type": "executable",
+		"executable": {
+			"cmd": "./bin/calc_provider"
+		}
+	},
+	"dependencies": {
+		"astroid": "dev"
+	},
+	"description": "A dicom conversion library for calculation providers.",
+	"name": "dicom",
+	"version": "0.1.0",
+	"api": {
+		"functions": [{
+			"description": "Reads DICOM streama and writes out dicom metadata",
+			"execution_class": "st",
+			"is_legacy": false,
+			"name": "parse_dicom_for_metadata",
+			"parameters": [{
+				"description": "",
+				"name": "dicomBlob",
+				"type": {
+					"simple_type": "blob",
+					"type": "simple_type"
+				}
+			}],
+			"returns": {
+				"description": "",
+				"type": {
+					"named_type": {
+						"app": "dosimetry",
+						"type": "dicom_metadata"
+					},
+					"type": "named_type"
+				}
+			},
+			"uid": "gjG6OOWBVWTat1y/HHyh0ot0MsI="
+		}, {
+			"description": "Reads DICOM streama and writes out dicom data",
+			"execution_class": "st",
+			"is_legacy": false,
+			"name": "parse_dicom",
+			"parameters": [{
+				"description": "",
+				"name": "dicomBlob",
+				"type": {
+					"simple_type": "blob",
+					"type": "simple_type"
+				}
+			}],
+			"returns": {
+				"description": "",
+				"type": {
+					"named_type": {
+						"app": "dosimetry",
+						"type": "dicom_data"
+					},
+					"type": "named_type"
+				}
+			},
+			"uid": "x/XRuEBfA42maSPdjQyi00myI/w="
+		}, {
+			"description": "",
+			"execution_class": "st",
+			"is_legacy": false,
+			"name": "are_equal",
+			"parameters": [{
+				"description": "",
+				"name": "val1",
+				"type": {
+					"simple_type": "number",
+					"type": "simple_type"
+				}
+			}, {
+				"description": "",
+				"name": "val2",
+				"type": {
+					"simple_type": "number",
+					"type": "simple_type"
+				}
+			}],
+			"returns": {
+				"description": "",
+				"type": {
+					"simple_type": "number",
+					"type": "simple_type"
+				}
+			},
+			"uid": "fmH1RepXadE5mh272s33+Myvz10="
+		}],		
+   "modules": [],
+		"types": [
+		{
+         "description": "1D image",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "the type of the image pixels",
+                     "name": "type_info",
+                     "type": {
+                        "named_type": {
+                           "app": "dosimetry",
+                           "type": "variant_type_info"
+                        },
+                        "type": "named_type"
+                     }
+                  },
+                  {
+                     "description": "the size (in pixels) of the image",
+                     "name": "size",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 1.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "the location in space of the outside corner of the first pixel",
+                     "name": "origin",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 1.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "vectors describing the orientation of the image axes in space - Each vector is one pixel long.",
+                     "name": "axes",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "array_type": {
+                                 "element_type": {
+                                    "simple_type": "number",
+                                    "type": "simple_type"
+                                 },
+                                 "size": 1.0
+                              },
+                              "type": "array_type"
+                           },
+                           "size": 1.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "a linear function mapping raw pixel values to image values",
+                     "name": "value_mapping",
+                     "type": {
+                        "named_type": {
+                           "app": "dosimetry",
+                           "type": "linear_function"
+                        },
+                        "type": "named_type"
+                     }
+                  },
+                  {
+                     "description": "the units of the image values",
+                     "name": "units",
+                     "type": {
+                        "simple_type": "string",
+                        "type": "simple_type"
+                     }
+                  },
+                  {
+                     "description": "the array of raw pixel values",
+                     "name": "pixels",
+                     "type": {
+                        "simple_type": "blob",
+                        "type": "simple_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "imaging",
+         "name": "image_1d",
+         "revision": 0.0
+      },
+      {
+         "description": "2D image",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "the type of the image pixels",
+                     "name": "type_info",
+                     "type": {
+                        "named_type": {
+                           "app": "dosimetry",
+                           "type": "variant_type_info"
+                        },
+                        "type": "named_type"
+                     }
+                  },
+                  {
+                     "description": "the size (in pixels) of the image",
+                     "name": "size",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 2.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "the location in space of the outside corner of the first pixel",
+                     "name": "origin",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 2.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "vectors describing the orientation of the image axes in space - Each vector is one pixel long.",
+                     "name": "axes",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "array_type": {
+                                 "element_type": {
+                                    "simple_type": "number",
+                                    "type": "simple_type"
+                                 },
+                                 "size": 2.0
+                              },
+                              "type": "array_type"
+                           },
+                           "size": 2.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "a linear function mapping raw pixel values to image values",
+                     "name": "value_mapping",
+                     "type": {
+                        "named_type": {
+                           "app": "dosimetry",
+                           "type": "linear_function"
+                        },
+                        "type": "named_type"
+                     }
+                  },
+                  {
+                     "description": "the units of the image values",
+                     "name": "units",
+                     "type": {
+                        "simple_type": "string",
+                        "type": "simple_type"
+                     }
+                  },
+                  {
+                     "description": "the array of raw pixel values",
+                     "name": "pixels",
+                     "type": {
+                        "simple_type": "blob",
+                        "type": "simple_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "imaging",
+         "name": "image_2d",
+         "revision": 0.0
+      },
+      {
+         "description": "3D image",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "the type of the image pixels",
+                     "name": "type_info",
+                     "type": {
+                        "named_type": {
+                           "app": "dosimetry",
+                           "type": "variant_type_info"
+                        },
+                        "type": "named_type"
+                     }
+                  },
+                  {
+                     "description": "the size (in pixels) of the image",
+                     "name": "size",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 3.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "the location in space of the outside corner of the first pixel",
+                     "name": "origin",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 3.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "vectors describing the orientation of the image axes in space - Each vector is one pixel long.",
+                     "name": "axes",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "array_type": {
+                                 "element_type": {
+                                    "simple_type": "number",
+                                    "type": "simple_type"
+                                 },
+                                 "size": 3.0
+                              },
+                              "type": "array_type"
+                           },
+                           "size": 3.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "a linear function mapping raw pixel values to image values",
+                     "name": "value_mapping",
+                     "type": {
+                        "named_type": {
+                           "app": "dosimetry",
+                           "type": "linear_function"
+                        },
+                        "type": "named_type"
+                     }
+                  },
+                  {
+                     "description": "the units of the image values",
+                     "name": "units",
+                     "type": {
+                        "simple_type": "string",
+                        "type": "simple_type"
+                     }
+                  },
+                  {
+                     "description": "the array of raw pixel values",
+                     "name": "pixels",
+                     "type": {
+                        "simple_type": "blob",
+                        "type": "simple_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "imaging",
+         "name": "image_3d",
+         "revision": 0.0
+      },
+      {
+         "description": "RGB triplet",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "",
+                     "name": "r",
+                     "type": {
+                        "simple_type": "number",
+                        "type": "simple_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "g",
+                     "type": {
+                        "simple_type": "number",
+                        "type": "simple_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "b",
+                     "type": {
+                        "simple_type": "number",
+                        "type": "simple_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "imaging",
+         "name": "rgb",
+         "revision": 0.0
+      },
+      {
+         "description": "RGB triplet with alpha",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "",
+                     "name": "r",
+                     "type": {
+                        "simple_type": "number",
+                        "type": "simple_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "g",
+                     "type": {
+                        "simple_type": "number",
+                        "type": "simple_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "b",
+                     "type": {
+                        "simple_type": "number",
+                        "type": "simple_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "a",
+                     "type": {
+                        "simple_type": "number",
+                        "type": "simple_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "imaging",
+         "name": "rgba",
+         "revision": 0.0
+      },
+      {
+         "description": "1D box",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "",
+                     "name": "corner",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 1.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "size",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 1.0
+                        },
+                        "type": "array_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "geometry",
+         "name": "box_1d",
+         "revision": 0.0
+      },
+      {
+         "description": "2D box",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "",
+                     "name": "corner",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 2.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "size",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 2.0
+                        },
+                        "type": "array_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "geometry",
+         "name": "box_2d",
+         "revision": 0.0
+      },
+      {
+         "description": "3D box",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "",
+                     "name": "corner",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 3.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "size",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 3.0
+                        },
+                        "type": "array_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "geometry",
+         "name": "box_3d",
+         "revision": 0.0
+      },
+      {
+         "description": "4D box",
+         "form": {
+            "structure_type": {
+               "fields": [
+                  {
+                     "description": "",
+                     "name": "corner",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 4.0
+                        },
+                        "type": "array_type"
+                     }
+                  },
+                  {
+                     "description": "",
+                     "name": "size",
+                     "type": {
+                        "array_type": {
+                           "element_type": {
+                              "simple_type": "number",
+                              "type": "simple_type"
+                           },
+                           "size": 4.0
+                        },
+                        "type": "array_type"
+                     }
+                  }
+               ]
+            },
+            "type": "structure_type"
+         },
+         "module": "geometry",
+         "name": "box_4d",
+         "revision": 0.0
+      }]
+	}
+}
