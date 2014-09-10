@@ -41,6 +41,14 @@
   	wstream.write("\tActual: " + JSON.stringify(actualValue) + "\n");
   };
 
+  module.exports.writeFailedTolerance = function(expectedValue, actualValue, type, tolerance){
+  	wstream.write("\tTest Result:  " + "Fail" + "\n");
+  	wstream.write("\tObject Type:  " + type + "\n");
+  	wstream.write("\tExpected: " + JSON.stringify(expectedValue) + "\n");
+  	wstream.write("\tActual: " + JSON.stringify(actualValue) + "\n");
+  	wstream.write("\tTolerance: " + JSON.stringify(tolerance) + "\n");
+  };
+
   module.exports.writePassed = function(type){
   	wstream.write("\tTest Result:  " + "Pass" + "\n");
   	wstream.write("\tObject Type:  " + type + "\n");
