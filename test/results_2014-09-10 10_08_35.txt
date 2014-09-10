@@ -1,0 +1,44 @@
+#########################################################
+App Name: dicom
+Run Date: 2014-09-10 10:08:35
+#########################################################
+
+---------------------------------------------------------
+Function Name: parse_dicom_for_metadata
+Description: test description
+	Test Result:  Pass
+	Object Type:  Object
+
+---------------------------------------------------------
+Function Name: parse_dicom
+Description: test description
+	Test Result:  Pass
+	Object Type:  Property
+
+---------------------------------------------------------
+Function Name: parse_dicom
+Description: test description
+	Test Result:  Pass
+	Object Type:  Property
+
+---------------------------------------------------------
+Function Name: parse_dicom
+Description: test description
+	Test Result:  Pass
+	Object Type:  Property
+
+---------------------------------------------------------
+Function Name: parse_dicom
+Description: test description
+	Test Result:  Fail
+	Object Type:  Property
+	Expected: 92.51
+	Actual: 92.5
+
+---------------------------------------------------------
+Function Name: parse_dicom
+Description: test description
+	Test Result:  Pass
+	Object Type:  Property
+
+App Name: dicom		Total Tests: 6		Passed: 5		Failed: 1
