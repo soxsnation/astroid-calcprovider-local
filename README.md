@@ -9,3 +9,4 @@ Run node ../lib/cli.js develop <Directory>
 
 TEST
 TEST2
+Test3
