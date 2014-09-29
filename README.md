@@ -8,3 +8,4 @@ Run node ../lib/cli.js develop <Directory>
 <Directory> is the directory where your calc_provider.exe, manifest.json and test.json files live
 
 TEST
+TEST2
