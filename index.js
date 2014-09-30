@@ -23,8 +23,5 @@
  */
 
 var client = require('./lib/client');
-// var Supervisor = require('./lib/supervisor');
-// var Promise = require('bluebird');
-
 exports.Client = client;
 
