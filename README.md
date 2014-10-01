@@ -10,3 +10,7 @@ Run node ../lib/cli.js develop <Directory>
 TEST
 TEST2
 Test3
+Test 4
+TestFeature
+TestFeature2
+TestFeature3
