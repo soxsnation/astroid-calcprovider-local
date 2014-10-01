@@ -12,3 +12,4 @@ TEST2
 Test3
 Test 4
 TestFeature
+TestFeature4
